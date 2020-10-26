@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./ListAvatar.css"
 
 import avatar1 from "../../assets/avatar1.png";
 import avatar2 from "../../assets/avatar2.png";
@@ -56,7 +57,7 @@ const ListAvatar = (props) => {
 
 
   return (
-    <div>
+    <div className="ListAvatar">
       <h1>Choose Your Avatar</h1>
       {AvatarList.map((x) => (
         <div
