@@ -1,14 +1,13 @@
 import React from "react";
+import avatar from "../../assets/avatar1.png"
 
-const AvatarView = () => {
+const Avatar = () => {
   return (
     <div>
       <h1>Avatar</h1>
-      <img
-        src={require("../../assets/avatar1.png")}
-      />
+      <img src={avatar} />
     </div>
   );
 };
 
-export default AvatarView;
+export default Avatar;
