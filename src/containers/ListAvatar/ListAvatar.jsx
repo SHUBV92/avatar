@@ -8,6 +8,9 @@ import avatar5 from "../../assets/avatar5.png";
 import avatar6 from "../../assets/avatar6.png";
 
 const ListAvatar = () => {
+
+
+
   const AvatarList = [
     {
       src: avatar1,
@@ -41,16 +44,26 @@ const ListAvatar = () => {
     },
   ];
 
+  const chooseAvatar = (id) => { 
+    console.table("Avatar Clicked", id, "Clicked Avatar")
+  }
+
   return (
     <div>
       <h1>Choose Your Avatar</h1>
       {AvatarList.map((x) => (
+        <div 
+        onClick={() => {
+            chooseAvatar(x.id)
+          }}>
         <img
           src={x.src}
           // label={x.label}
           // id={x.id}
           alt={x.id}
+          
         />
+        </div>
       ))}
     </div>
   );
