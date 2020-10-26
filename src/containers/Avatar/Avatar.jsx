@@ -1,11 +1,11 @@
 import React from "react";
 import avatar from "../../assets/avatar1.png"
 
-const Avatar = () => {
+const Avatar = (props) => {
   return (
     <div>
       <h1>Avatar</h1>
-      <img src={avatar} />
+      <img src={props.chosenAvatar} />
     </div>
   );
 };

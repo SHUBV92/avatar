@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import avatar1 from "../../assets/avatar1.png";
 import avatar2 from "../../assets/avatar2.png";
@@ -7,9 +7,11 @@ import avatar4 from "../../assets/avatar4.png";
 import avatar5 from "../../assets/avatar5.png";
 import avatar6 from "../../assets/avatar6.png";
 
-const ListAvatar = () => {
-
-
+const ListAvatar = (props) => {
+  const [
+    chosenAvatar,
+    setChosenAvatar,
+  ] = useState("");
 
   const AvatarList = [
     {
@@ -44,25 +46,30 @@ const ListAvatar = () => {
     },
   ];
 
-  const chooseAvatar = (id) => { 
-    console.table("Avatar Clicked", id, "Clicked Avatar")
-  }
+  const chooseAvatar = (id) => {
+    setChosenAvatar(id);
+    console.log("Set Avatar as a prop", props)
+    props.setAvatar(id)
+
+  };
+
+
 
   return (
     <div>
       <h1>Choose Your Avatar</h1>
       {AvatarList.map((x) => (
-        <div 
-        onClick={() => {
-            chooseAvatar(x.id)
-          }}>
-        <img
-          src={x.src}
-          // label={x.label}
-          // id={x.id}
-          alt={x.id}
-          
-        />
+        <div
+          onClick={() => {
+            props.onClick(x.src);
+          }}
+        >
+          <label>{x.label}</label>
+          <img
+            src={x.src}
+            id={x.id}
+            alt={x.id}
+          />
         </div>
       ))}
     </div>
