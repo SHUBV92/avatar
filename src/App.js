@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Avatar from "./containers/Avatar/Avatar";
-import ListAvatar from "./containers/ListAvatar/ListAvatar";
+import AvatarIcons from "./containers/AvatarIcons/AvatarIcons";
+import Popover from "./containers/Popover/Popover";
 const App = () => {
   const [
     chosenAvatar,
@@ -13,11 +14,12 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div className="App">
       <Avatar
       chosenAvatar={chosenAvatar}  
       />
-      <ListAvatar
+      <Popover />
+      <AvatarIcons
       onClick={
         setAvatar
       } />

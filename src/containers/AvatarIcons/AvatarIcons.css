@@ -1,0 +1,66 @@
+/* .ListAvatar {
+  border: 3px border, color rgb(155, 160, 163);
+
+} */
+
+.ImageListAvatar {
+  border: 3px border, color rgb(155, 160, 163);
+  border: 5px solid rgb(155, 160, 163);
+  border-radius: 280px;
+
+  /* opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden; */
+}
+
+.ImageListAvatar:hover {
+  border: 3px solid, rgb(155, 160, 163);
+  color: rgb(122, 161, 178);
+  opacity: 20%;
+}
+/* Instructions */
+/* border on hover: 3px border, color rgb(155, 160, 163);
+overlay on hover: color rgb(122, 161, 178), opacity: 20%
+margin between two avatars: 14px */
+.container {
+  position: relative;
+  width: 50%;
+}
+
+.middle {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #4caf50;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+
+
+/* Instructions
+* avatar list images:
+    * border on hover: 3px border, color rgb(155, 160, 163);
+    * overlay on hover: color rgb(122, 161, 178), opacity: 20%
+    * border spinner, currently active avatar: color: rgb(122, 161, 178)
+    * margin between two avatars: 14px */

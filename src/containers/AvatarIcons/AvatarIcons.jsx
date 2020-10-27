@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./ListAvatar.css"
+import "./AvatarIcons.css";
 
 import avatar1 from "../../assets/avatar1.png";
 import avatar2 from "../../assets/avatar2.png";
@@ -8,7 +8,7 @@ import avatar4 from "../../assets/avatar4.png";
 import avatar5 from "../../assets/avatar5.png";
 import avatar6 from "../../assets/avatar6.png";
 
-const ListAvatar = (props) => {
+const AvatarIcons = (props) => {
   const [
     chosenAvatar,
     setChosenAvatar,
@@ -49,32 +49,31 @@ const ListAvatar = (props) => {
 
   const chooseAvatar = (id) => {
     setChosenAvatar(id);
-    console.log("Set Avatar as a prop", props)
-    props.setAvatar(id)
-
+    props.setAvatar(id);
   };
 
-
-
   return (
-    <div className="ListAvatar">
-      <h1>Choose Your Avatar</h1>
+    <div>
       {AvatarList.map((x) => (
         <div
+          className="container"
           onClick={() => {
             props.onClick(x.src);
           }}
         >
-          <label>{x.label}</label>
           <img
+            className="ImageListAvatar"
             src={x.src}
             id={x.id}
             alt={x.id}
           />
+          <div id="middle">
+            <label className="text">{x.label}</label>
+          </div>
         </div>
       ))}
     </div>
   );
 };
 
-export default ListAvatar;
+export default AvatarIcons;
